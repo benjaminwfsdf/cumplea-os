@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌟 Sorpresa para la Profesora Milca 🌟</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Patrick Hand', cursive;
+      overflow-x: hidden;
+      text-align: center;
+      background: linear-gradient(to top, #e9f2ff, #cfd7ff);
+    }
+
+    #intro {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: url('/img/principito.jpg') center center no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+      z-index: 10;
+      padding-bottom: 120px;
+      box-sizing: border-box;
+    }
+
+    .intro-texto {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px 50px;
+      border-radius: 25px;
+      backdrop-filter: blur(12px);
+      animation: aparecer 1.5s ease-out;
+      color: #fff;
+    }
+
+    .intro-texto h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.2em;
+      color: #fff;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+      margin-bottom: 10px;
+    }
+
+    .intro-texto p {
+      font-size: 1.3em;
+      font-style: italic;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #ffdee2;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 15px;
+      font-size: 1.2em;
+      cursor: pointer;
+      font-family: 'Patrick Hand', cursive;
+      color: #3d2c4e;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes aparecer {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    #mensaje, #frases {
+  display: none;
+  background: url("/img/imagen fondo.jpg") center center no-repeat fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  padding: 60px 20px 40px;
+  box-sizing: border-box;
+}
+
+
+    .mensaje-contenido {
+      background-color: rgba(255, 255, 255, 0.85);
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 30px;
+      border-radius: 30px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .principe-img {
+      width: 180px;
+      max-width: 90%;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #frases .mensaje-contenido {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px 20px;
+      border-radius: 25px;
+    }
+
+    #frases p {
+      font-size: 1.2em;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #ec89b8;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #4b3e4d;
+      margin: 10px 0;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @media (max-width: 600px) {
+      .intro-texto {
+        padding: 20px;
+      }
+
+      .intro-texto h1 {
+        font-size: 2.2em;
+      }
+
+      .btn {
+        font-size: 1em;
+        padding: 12px 20px;
+      }
+
+      .mensaje-contenido {
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 1.7em;
+      }
+
+      p, #frases p {
+        font-size: 1em;
+      }
+
+      .principe-img {
+        width: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div id="intro">
+    <div class="intro-texto">
+      <h1>🎁 ¡Tenemos una sorpresa para usted, Profesora Milca! 🎁</h1>
+      <p>“Usted no es una rosa cualquiera... es nuestra rosa.”</p>
+      <button class="btn" onclick="iniciarSorpresa()">Haz clic para comenzar</button>
+    </div>
+  </div>
+
+  <div id="mensaje">
+    <div class="mensaje-contenido">
+      <img src="img/solo principito.jpg" alt="El Principito" class="principe-img">
+      <h1>🌟 Feliz Cumpleaños, Profesora Milca 🌟</h1>
+      <p><em>“Usted no es una rosa cualquiera… es nuestra rosa. Porque ha cuidado de nosotros, y nosotros de usted.”</em></p>
+      <hr style="border: none; border-top: 1px solid #ccc; margin: 20px auto; width: 80%;">
+      <p>Hoy celebramos no solo su cumpleaños,<br>
+      sino su forma de enseñarnos a ver con el corazón,<br>
+      de escucharnos con paciencia<br>
+      y de brillar con su ternura única.</p>
+      <hr style="border: none; border-top: 1px solid #ccc; margin: 20px auto; width: 80%;">
+      <p><strong>📖 Como dijo El Principito:</strong><br>
+      <em>“Fue el tiempo que pasaste con tu rosa lo que la hizo tan importante.”</em></p>
+      <p>Gracias por regalarnos su tiempo, su dedicación y su ternura.<br>
+      <strong>Para nosotros, usted es muy especial.</strong> 💖</p>
+      <p>Gracias por guiarnos en nuestro pequeño planeta con tanto amor. 🪐</p>
+      <p><strong>Con cariño infinito,</strong><br>Sus estudiantes de <strong>3° Medio</strong> ✨</p>
+      <button class="btn" onclick="mostrarFrases()">📖 Ver frases de El Principito</button>
+    </div>
+
+    <div id="frases">
+      <div class="mensaje-contenido">
+        <h1>🌠 Frases de El Principito</h1>
+        <p>🌹 "Fue el tiempo que pasaste con tu rosa lo que la hizo tan importante."</p>
+        <p>🦊 "Solo con el corazón se puede ver bien; lo esencial es invisible a los ojos."</p>
+        <p>🌍 "Todas las personas grandes han sido niños antes. Pero pocas lo recuerdan."</p>
+        <p>💫 "Caminando en línea recta no puede uno llegar muy lejos."</p>
+        <p>👑 "Es mucho más difícil juzgarse a sí mismo que juzgar a los demás."</p>
+        <p>✨ "Los ojos están ciegos. Hay que buscar con el corazón."</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function iniciarSorpresa() {
+      document.getElementById("intro").style.display = "none";
+      document.getElementById("mensaje").style.display = "block";
+    }
+
+    function mostrarFrases() {
+      const frases = document.getElementById("frases");
+      frases.style.display = frases.style.display === "none" ? "block" : "none";
+    }
+
+    // Estrellas animadas
+    const canvas = document.getElementById("stars");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const stars = [];
+    for (let i = 0; i < 120; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 0.5,
+        d: Math.random() * 1
+      });
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#fff";
+      for (let s of stars) {
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      moveStars();
+    }
+
+    function moveStars() {
+      for (let s of stars) {
+        s.y += s.d;
+        if (s.y > canvas.height) {
+          s.y = 0;
+          s.x = Math.random() * canvas.width;
+        }
+      }
+    }
+
+    setInterval(drawStars, 33);
+  </script>
+</body>
+</html>
